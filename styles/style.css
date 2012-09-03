@@ -64,18 +64,7 @@ a:hover {
 #main p {
   font-size: 11px;
   line-height: 2;
-}
-
-#logo {
-  width: 190px;
-  height: 64px;
-  margin: 15px 0 0 15px;
-  background: url("logo.png");
-  text-indent: -99999px;
-}
-
-#logo h1 {
-  margin: 0;
+  text-align: left;
 }
 
 div.header {
@@ -90,7 +79,7 @@ div.header h1 {
   margin-bottom: 10px;
 }
 
-#num-repos, #num-members {
+#num-repos, #num-followers, #hireable {
   font-size: 14px;
   font-weight: bold;
   color: #0084b4;
@@ -212,13 +201,11 @@ strong {
   font-weight:bold
 }
 
-/* Grid >> Children (Alpha ~ First, Omega ~ Last) */
-
-.alpha {
+.leftie_loosie {
   margin-left: 0;
 }
 
-.omega {
+.rightie_tightie {
   margin-right: 0;
 }
 

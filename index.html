@@ -1,38 +1,50 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <link href="stylesheets/reset.css" rel="stylesheet" />
-    <link href="stylesheets/style.css" rel="stylesheet" />
     <title>
         jamietech on GitHub
     </title>
+    <link href="styles/reset.css" rel="stylesheet" />
+    <link href="styles/style.css" rel="stylesheet" />
 </head>
 <body>
     <div id="wrapper" class="grid clearfix">
-      <div id="main" class="grid-1 nav">
-        <h1>jamietech on GitHub</h1>
-        <p><strong>Want to help?</strong> Submit a pull request to the appropriate repository!</p>
-        <p>Visit <a href="https://soaringcats.github.com/">soaringcats.github.com</a> for more</p>
-      </div>
 
-      <div class="grid grid-3">
-        <div id="statistics" class="grid-1 alpha header">
-          <h1>Statistics</h1>
-          <p>
-            <a href="https://github.com/jamietech/repositories"><span id="num-repos"><img src="assets/spinner.gif" /></span> public repos</a>
-          </p>
-          <p class="email"><a href="mailto:dev@jamietech.co.cc">dev@jamietech.co.cc</a></p>
+        <div id="main" class="grid-1">
+            <h1>jamietech on GitHub</h1>
+            <p>Coding plugins for Minecraft using the Bukkit API, I also sometimes dabble in web development. Hi! I'm jamietech.</p>
+                <br />
+            <p>Want to help with code? Submit a pull request to the corresponding repository for &hearts;'s</p>
+                <br />
+            <p>Check out <a href="http://soaringcats.github.com">soaringcats.github.com</a> for more!</p>
+                <br />
+            <p>&hearts; to <a href="http://twitter.github.com">Twitter</a>!</p>
         </div>
 
-        <div id="recently-updated" class="grid-2 omega header">
-          <h1>Recently updated <a href="https://github.com/twitter/repositories">View All on GitHub</a></h1>
-          <ol id="recently-updated-repos"></ol>
+        <div class="grid grid-3">
+            <div id="statistics" class="grid-1 leftie_loosie header">
+                <h1>Statistics</h1>
+                <p>
+                    <a href="https://github.com/jamietech/repositories"><span id="num-repos"><img src="images/spinner.gif" /></span> public repos</a>
+                        <br />
+                    <a href="https://github.com/jamietech/followers"><span id="num-followers"><img src="images/spinner.gif" /></span> followers</a>
+                        <br />
+                    <a href="https://github.com/jamietech"><span id="hireable"><img src="images/spinner.gif" /> </span> hireable</a>
+                </p>
+            </div>
+            
+            <div id="recently-updated" class="grid-2 rightie_tightie header">
+              <h1>Recently updated <a href="https://github.com/twitter/repositories">View All on GitHub</a></h1>
+              <ol id="recently-updated-repos"></ol>
+            </div>
         </div>
-      </div>
+        
+        <ol id="repos"></ol>
 
-      <ol id="repos"></ol>
     </div>
-    <script type="text/javascript" src="javascript/jquery.js"></script>
-    <script type="text/javascript" src="javascript/script.js"></script>
+    
+    <script type="text/javascript" src="scripts/jquery.js"></script>
+    <script type="text/javascript" src="scripts/script.js"></script>
+    
 </body>
 </html>
