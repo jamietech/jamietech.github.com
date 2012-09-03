@@ -1,6 +1,6 @@
 $(function() {
     var repos = 0;
-    var url = "https://api.github.com/users/jamietech/repos?sort=pushed&type=owner";
+    var url = "https://api.github.com/users/jamietech/repos?callback=?&sort=pushed&type=owner";
     $.getJSON(url, function(data) {
         var $item = $("<li>").addClass("repo grid-1 " + (repo.language || '').toLowerCase());
         var $link = $("<a>").attr("href", repoUrl(repo)).appendTo($item);
