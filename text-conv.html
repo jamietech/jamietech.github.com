@@ -33,9 +33,13 @@
             var oldText = $("#toConv").val();
             var newText = "";
             var up = true;
-            $.each(oldText.split(''), function(i, item) {
-                newText += (up ? item.toUpperCase() : item.toLowerCase());
-                up = !up;
+            $.each(oldText.split("\n"), function(i, item) {
+                $.each(item.split(''), function(j, jtem) {
+                    newText += (up ? jtem.toUpperCase() : jtem.toLowerCase());
+                    up = !up;
+                });
+                if (newText != '')
+                    newText += "<br>";
             });
             if (newText == "") {
                 newText = "Enter text to convert";
