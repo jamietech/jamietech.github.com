@@ -36,7 +36,7 @@
             $.each(oldText.split("\n"), function(i, item) {
                 $.each(item.split(''), function(j, jtem) {
                     newText += (up ? jtem.toUpperCase() : jtem.toLowerCase());
-                    if (item != ' ')
+                    if (jtem != ' ')
                         up = !up;
                 });
                 if (newText != '')
