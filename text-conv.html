@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>
+        Text-Converter
+    </title>
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/css/bootstrap-combined.min.css" rel="stylesheet">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <style type="text/css">
+        .first-jt {
+            margin-top: 25px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-static-top">
+        <div class="navbar-inner">
+            <a class="brand" href="../">jamietech</a>
+            <ul class="nav">
+                <li><a href="https://github.com/jamietech">Projects</a></li>
+                <li class="active"><a href=".">Text Converter</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="container first-jt">
+        <textarea placeholder="Enter text to convert" id="toConv" class="input-xxlarge"></textarea>
+        <div class="well">
+            <div id="converted">Enter text to convert</div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $('#toConv').bind('input propertychange', function() {
+            var oldText = $("#toConv").val();
+            var newText = "";
+            var up = true;
+            $.each(oldText.split(''), function(i, item) {
+                newText += (up ? item.toUpperCase() : item.toLowerCase());
+                up = !up;
+            });
+            if (newText == "") {
+                newText = "Enter text to convert";
+            }
+            $("#converted").html(newText);
+        });
+    </script>
+</body>
+</html>
