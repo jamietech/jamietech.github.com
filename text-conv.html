@@ -36,7 +36,8 @@
             $.each(oldText.split("\n"), function(i, item) {
                 $.each(item.split(''), function(j, jtem) {
                     newText += (up ? jtem.toUpperCase() : jtem.toLowerCase());
-                    up = !up;
+                    if (item != ' ')
+                        up = !up;
                 });
                 if (newText != '')
                     newText += "<br>";
