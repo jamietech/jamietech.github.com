@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>
+        Nether Portal Calculator
+    </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/css/bootstrap-combined.min.css" rel="stylesheet">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <style type="text/css">
+        .first-jt {
+            margin-top: 25px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-static-top">
+        <div class="navbar-inner">
+            <a class="brand" href="../">jamietech</a>
+            <ul class="nav">
+                <li><a href="https://github.com/jamietech">Projects</a></li>
+                <li class="active"><a href=".">Nether Portals</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="container first-jt">
+        <p>To work out the exact coordinates for your portal, please enter the overworld coordinates in the following boxes.</p>
+        <input type="text" id="x" placeholder="Overworld X" onKeyPress="return numbersonly(this, event)" />
+        <input type="text" id="y" placeholder="Overworld Y" onKeyPress="return numbersonly(this, event)" />
+        <input type="text" id="z" placeholder="Overworld Z" onKeyPress="return numbersonly(this, event)" />
+        <p class="lead">The coordinates for your nether portal are: <span id="neth">waiting for user input.</span></p>
+        <noscript>
+            <p>This page requires JavaScript to run.</p>
+        </noscript>
+    </div>
+    <script type="text/javascript">
+        function numbersonly(myfield, e) {
+            var key;
+            var keychar;
+            if (window.event)
+               key = window.event.keyCode;
+            else if (e)
+               key = e.which;
+            else
+               return true;
+            keychar = String.fromCharCode(key);
+            if ((key==null) || (key==0) || (key==8) || (key==9) || (key==13) || (key==27))
+               return true;
+            else if ((("0123456789.-").indexOf(keychar) > -1))
+               return true;
+
+            return false;
+        }
+        function getCoords() {
+            if ($("#x").val() == '' || $("#y").val() == '' || $("#z").val() == '')
+                return;
+            var x = $("#x").val();
+            x = Math.floor(x) / 8;
+            var y = $("#y").val();
+            var z = $("#z").val();
+            z = Math.floor(z) / 8;
+            $("#neth").fadeOut(100, function() {
+                $("#neth").html("x" + x + " y" + y + " z" + z);
+                $("#neth").fadeIn(100);
+            });
+        }
+        $("input").bind('input propertychange', function() {
+            getCoords();
+        });
+    </script>
+</body>
+</html>
